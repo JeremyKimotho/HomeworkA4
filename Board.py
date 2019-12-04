@@ -3,12 +3,42 @@ EMPTY = 0
 X = 1
 O = 2
 class Board:
-    def __init__(self):
-        self.board = None
+    def __init__(self, rows=3, columns=3):
+        self.board = []
+        for i in range(0, rows):
+            colum=[]
+            for i in range (0, columns):
+                colum.append(EMPTY)
+            self.board.append(colum)
+    
+    def canPlay(self, row, column):
+        if self.board[row][column]==EMPTY:
+            return True
+        else:
+            return False
+    
+    def play(self, row, column, piece):
+        self.board[row][column]=piece
+
+    def cols(self):
+        return len(self.board[0])
+
+    def rows(self):
+        return len(self.board)
                     
     def full(self):
-        return False
+        for x in range(0,len(self.board)):
+            for i in self.board[x]:
+                if i==EMPTY:
+                    return False
+        return True
             
+    def winInRow(self):
+        pass
+
+    def winInCol(self):
+        pass
+    
     def won(self, piece):
         return False
             

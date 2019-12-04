@@ -15,10 +15,10 @@ HEIGHT = 600
 TESTPART1 = True
 TESTPART2 = True
 TESTPART3 = True
-TESTPART4 = True
-TESTPART5 = True
-TESTPART6 = True
-TESTPART7 = True
+TESTPART4 = False
+TESTPART5 = False
+TESTPART6 = False
+TESTPART7 = False
 STOP1STFAIL = True
 
 ##############################################################################
