@@ -65,8 +65,16 @@ class Board:
                         return True     
         return False
 
-
     def won(self, piece):
+        for row in range(0, len(self.board)):
+        # Checking rows
+            if self.winInRow(row, piece)==True:
+                return True
+        for column in range(0, len(self.board)):
+            if self.winInCol(column, piece)==True:
+                return True
+        if self.winInDiag(piece)==True:
+            return True
         return False
             
     def hint(self, piece):             
