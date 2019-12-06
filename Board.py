@@ -48,6 +48,23 @@ class Board:
                     return True
         return False
         
+    def winInDiag(self, piece):
+        for x in range(0,len(self.board)-2):
+        # Column Length 
+            for i in range(0, len(self.board[0])-2):
+            # Row Length
+                if self.board[x][i]==piece and self.board[x+1][i+1]==piece:
+                    if self.board[x+2][i+2]==piece:
+                        return True
+        for x in range(0,len(self.board)-2):
+        # Column Length 
+            for i in range(len(self.board[0])-1, 1,-1):
+            # Row Length
+                if self.board[x][i]==piece and self.board[x+1][i-1]==piece:
+                    if self.board[x+2][i-2]==piece:
+                        return True     
+        return False
+
 
     def won(self, piece):
         return False
