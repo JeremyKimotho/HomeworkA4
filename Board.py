@@ -33,18 +33,21 @@ class Board:
                     return False
         return True
             
+   
     def winInRow(self, row, piece):
-        for x in self.board[row]:
-            if x[i]==piece and x[i+1]==piece:
-                if x[i+2]==piece:
+        for x in range(0, len(self.board[row])-2):
+            if self.board[row][x]==piece and self.board[row][x+1]==piece:
+                if self.board[row][x+2]==piece:
                     return True
+        return False
 
     def winInCol(self, column, piece):
-        for i in range(len(self.board)):
-            for x in self.board:
-                if x[i]==piece and x[i+1]==piece:
-                    if x[i+2]==piece:
-                        return True
+        for i in range(len(self.board)-2):
+            if self.board[i][column]==piece and self.board[i+1][column]==piece:
+                if self.board[i+2][column]==piece:
+                    return True
+        return False
+        
 
     def won(self, piece):
         return False
