@@ -77,7 +77,16 @@ class Board:
             return True
         return False
             
-    def hint(self, piece):             
+    def hint(self, piece): 
+        for x in range(0, len(self.board)):
+            for i in range(0, len(self.board[0])):
+                if self.board[x][i]==EMPTY:
+                    self.board[x][i]=piece
+                    if self.won(piece)==True:
+                        self.board[x][i]=EMPTY
+                        return x , i    
+                    else:
+                        self.board[x][i]=EMPTY        
         return -1, -1
     
     def gameover(self):

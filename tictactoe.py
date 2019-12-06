@@ -18,7 +18,7 @@ TESTPART3 = True
 TESTPART4 = True
 TESTPART5 = True
 TESTPART6 = True
-TESTPART7 = False
+TESTPART7 = True
 STOP1STFAIL = True
 
 ##############################################################################
